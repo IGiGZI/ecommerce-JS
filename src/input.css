@@ -1,1 +1,20 @@
 @import "tailwindcss";
+@import "flowbite/src/themes/default";
+@theme{
+    --color-primary: white;
+    --color-primary1: #363738;
+    --color-secondary: #F5F5F5;
+    --color-secondary1: #FEFAF1;
+    --color-secondary2: #DB4444;
+    --color-bg: white;
+    --color-text: #FAFAFA;
+    --color-text1: #7D8184;
+    --color-text2: #000000;
+    --color-button: #000000;
+    --color-button1: #00FF66;
+    --color-button2: #DB4444;
+    --color-hover: #A0BCE0;
+    --color-hover1: #194d33;
+    --color-hover2: #E07575;
+    
+}
