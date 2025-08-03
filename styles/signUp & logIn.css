@@ -1,0 +1,25 @@
+:root{
+    --text1Color: #7D8184;
+    --button1Color: #DB4444;
+}
+
+
+main{
+    input{
+        border-color: var(--text1Color);
+    }
+    .createAccBtn{
+        color: white;
+        background-color: var(--button1Color);
+    }
+    .signUpGoogleBtn{
+        border-color: var(--text1Color);
+    }
+    p.logInLine{
+        color: var(--text1Color);
+    }
+    a.forgotPassLink{
+        color: var(--button1Color);
+    }
+}
+
