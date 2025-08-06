@@ -312,7 +312,7 @@
     <main class="">
       <div class="w-[80%] mx-auto grid grid-cols-5 gap-4">
         <div
-          class="col-span-2 lg:col-span-1 flex flex-col content-between h-[40vh] lg:h-[60vh] overflow-auto gap-2 custom-scroll"
+          class="col-span-2 lg:col-span-1 flex flex-col content-between h-[40vh] lg:h-[70vh] overflow-auto gap-2 custom-scroll"
         >
           <div class="flex-1">
             <img src="../src/images/Frame 895.png" alt="" class="w-100" />
@@ -328,7 +328,7 @@
           </div>
         </div>
         <div
-          class="lg:col-span-2 col-span-3 h-[40vh] lg:h-[60vh] overflow-hidden flex items-center"
+          class="lg:col-span-2 col-span-3 h-[40vh] lg:h-[70vh] overflow-hidden flex items-center"
         >
           <img src="../src/images/Frame 894.svg" alt="product" />
         </div>
@@ -381,7 +381,7 @@
               2XL
             </div>
           </div>
-          <div class="flex items-center">
+          <div class="flex items-center my-3">
             <div
               class="flex items-center border border-gray-300 rounded-md overflow-hidden w-fit"
             >
@@ -399,9 +399,9 @@
             </div>
             <button
               type="button"
-              class="mx-2 text-white bg-[var(--color-secondary2)] hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+              class="mx-2 text-white bg-[var(--color-secondary2)] hover:bg-red-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
             >
-              Default
+              Buy Now
             </button>
             <div
               class="size-8 border border-black flex justify-center items-center rounded-lg"
@@ -409,12 +409,89 @@
               <i class="far fa-heart text-xl"></i>
             </div>
           </div>
+          <div class="my-4 border border-black">
+            <div class="flex gap-4 items-center w-full p-2">
+              <div><i class="fa-regular fa-truck"></i></div>
+              <div>
+                <h3>Free Delivery</h3>
+                <p class="underline">Enter Your Postal code for delivery</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-center w-full p-2 border-t">
+              <div><i class="fa-regular fa-truck"></i></div>
+              <div>
+                <h3>Retun Delivery</h3>
+                <p class="underline">Enter Your Postal code for delivery</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </main>
-
     <!-- end product detials -->
     <br />
+    <!-- related items -->
+    <!-- اللون الاحمر مش شغال !!! -->
+    <h3
+      class="text-[var(--color-secondary2)] w-[80%] mx-auto my-3 relative before:content-[''] before:absolute before:top-0 before:left-[-12px] before:w-[2px] before:h-full before:bg-[var(--color-secondary2)] before:me-2"
+    >
+      Related Items
+    </h3>
+    <section>
+      <div class="w-[80%] mx-auto flex flex-wrap">
+        <div class="card">
+          <div
+            class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+          >
+            <div class="card-header relative">
+              <img
+                class="p-8 rounded-t-lg mx-auto"
+                src="../src/images/alexa.png"
+                alt="product image"
+              />
+              <div
+                class="absolute bg-red-600 border border-black text-white text-sm font-semibold top-2 left-2 px-2 py-1 rounded"
+              >
+                -$40
+              </div>
+              <div
+                class="absolute hover:bg-red-600 hover:text-white hover:border-white border border-black text-black text-lg font-semibold top-2 right-2 px-2 py-1 rounded"
+              >
+                <i class="fa-regular fa-heart"></i>
+              </div>
+            </div>
+
+            <div class="px-5 pb-5">
+              <h2 class="font-bold text-xl">Havic HV G-92 Gamepad</h2>
+              <div class="flex items-center mt-2">
+                <span class="text-lg font-bold text-[var(--color-secondary2)]"
+                  >$120</span
+                >
+                <span class="text-lg font-bold text-gray-500 mx-2 line-through"
+                  >$120</span
+                >
+              </div>
+              <div class="flex items-center my-3">
+                <p class="pe-2">
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i class="fas fa-star text-yellow-400 text-lg"></i>
+                  <i
+                    class="fas fa-star text-gray-400 hover:text-yellow-400 cursor-pointer text-lg"
+                  ></i>
+                </p>
+                <p class="text-lg text-gray-500 font-semibold relative">
+                  (90%)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <br />
+    <!-- End related items -->
     <!-- Footer -->
     <footer class="bg-button">
       <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
