@@ -113,6 +113,7 @@ function filterProducts(category) {
             </button>
             <a href="#">
               <img
+                id="${product.id}"
                 class="p-8 rounded-t-lg bg-secondary"
                 src="${product.images[0]}"
                 alt="${product.title}"
@@ -204,7 +205,7 @@ function filterProducts(category) {
 
 // render random products in the category section
 function showRandomCategoryProducts() {
-  const filteredProducts = products.slice(0,11)
+  const filteredProducts = products.slice(0, 11);
   displayProducts(filteredProducts, categoryProducts);
 }
 
@@ -216,7 +217,7 @@ function showBestProducts(rate = 4.7) {
 
 // render products in the explore section
 function showExploreProducts(discount = 15) {
-  const randomProducts = products.filter((product) =>{
+  const randomProducts = products.filter((product) => {
     return product.discountPercentage > discount;
   });
   displayProducts(randomProducts, exploreProducts);
@@ -224,7 +225,6 @@ function showExploreProducts(discount = 15) {
 
 // Function to display products in a given parent element
 function displayProducts(productList, parentElement) {
-
   parentElement.innerHTML = ""; // Clear existing products
   productList.forEach((product) => {
     const productElement = document.createElement("div");
@@ -253,6 +253,7 @@ function displayProducts(productList, parentElement) {
             </button>
             <a href="#">
               <img
+                id="${product.id}"
                 class="p-8 rounded-t-lg bg-secondary"
                 src="${product.images[0]}"
                 alt="${product.title}"
