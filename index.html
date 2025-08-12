@@ -109,6 +109,7 @@
                   d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
                 />
               </svg>
+              <span id="cart-counter-mobile" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
               <span class="sr-only">Shopping cart</span>
             </a>
 
@@ -189,6 +190,7 @@
                   d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
                 />
               </svg>
+              <span id="cart-counter" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
               <span class="sr-only">Shopping cart</span>
             </a>
 
@@ -284,6 +286,16 @@
       <hr class="border-primary1" />
     </header>
     <!-- End Header -->
+
+    <!-- user -->
+  <div class="absolute right-[100px]">
+    <h2 class="user text-center" id="user-name">Guest</h2>
+    <button id="logout-btn" onclick="logout()"
+      class="text-text bg-button2 py-2 px-8 rounded hover:cursor-pointer">
+      Log out
+    </button>
+  </div>
+  <!-- user -->
 
     <!-- Main Content -->
     <main class="container mx-auto my-14 p-4">
@@ -2770,5 +2782,6 @@
     <script src="scripts/main.js"></script>
     <!-- Flowbite Library -->
     <script src="scripts/flowbite.min.js"></script>
+    <script src="scripts/signUp & logIn.js"></script>
   </body>
 </html>
