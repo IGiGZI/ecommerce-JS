@@ -361,7 +361,7 @@ document.addEventListener("click", function (e) {
 });
 
 // go to details page
-function goToDetails(id) {
+window.goToDetails = function (id) {
   localStorage.setItem("selectedProductId", id);
   window.location.href = "../pages/productDetails.html";
-}
+};
