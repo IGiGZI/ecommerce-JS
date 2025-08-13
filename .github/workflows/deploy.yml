@@ -3,10 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master # or main
+      - master
 
 permissions:
-  contents: write  # allow actions to push to gh-pages
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -24,11 +24,13 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Build Tailwind CSS
       - name: Build Tailwind CSS
         run: npm run build:css
 
+      # Deploy built files to Pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./src
