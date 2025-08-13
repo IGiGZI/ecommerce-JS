@@ -21,32 +21,27 @@ function displayProducts(products) {
           class="col-span-2 lg:col-span-1 flex flex-col content-between h-[40vh] lg:h-[70vh] overflow-auto gap-2 custom-scroll"
         >
           <div class="flex-1">
-            <img src="${
-              product.images[1] ? product.images[1] : product.images[0]
-            }" alt="${product.title}" class="w-100" />
+            <img src="${product.images[1] ? product.images[1] : product.images[0]
+    }" alt="${product.title}" class="w-100" />
           </div>
           <div class="flex-1">
-            <img src="${
-              product.images[2] ? product.images[2] : product.images[0]
-            }" alt="${product.title}" class="w-100" />
+            <img src="${product.images[2] ? product.images[2] : product.images[0]
+    }" alt="${product.title}" class="w-100" />
           </div>
           <div class="flex-1">
-            <img src="${product.images[0]}" alt="${
-    product.title
-  }" class="w-100" />
+            <img src="${product.images[0]}" alt="${product.title
+    }" class="w-100" />
           </div>
           <div class="flex-1">
-            <img src="${
-              product.images[3] ? product.images[3] : product.images[0]
-            }" alt="${product.title}" class="w-100" />
+            <img src="${product.images[3] ? product.images[3] : product.images[0]
+    }" alt="${product.title}" class="w-100" />
           </div>
         </div>
         <div
           class="lg:col-span-2 col-span-3 h-[40vh] lg:h-[70vh] overflow-hidden flex items-center"
         >
-          <img src="${
-            product.images[4] ? product.images[4] : product.images[0]
-          }" alt="${product.title}" />
+          <img src="${product.images[4] ? product.images[4] : product.images[0]
+    }" alt="${product.title}" />
         </div>
         <div class="lg:col-span-2 col-span-5 px-2">
           <h2 class="font-bold text-xl">${product.title}</h2>
@@ -58,9 +53,8 @@ function displayProducts(products) {
               class="text-lg text-gray-500 font-semibold relative after:content-[''] after:absolute after:top-0 after:right-[-12px] after:w-[2px] after:h-full after:bg-gray-400 after:ml-2"
             >(${product.rating})
             </p>
-            <p class="ml-4 text-[var(--color-button1)] text-xl">${
-              product.availabilityStatus
-            }</p>
+            <p class="ml-4 text-[var(--color-button1)] text-xl">${product.availabilityStatus
+    }</p>
           </div>
           <h2 class="font-semibold text-xl">$${product.price}</h2>
           <p class="my-2 text-lg">
@@ -186,8 +180,8 @@ function reviwers(num, reviewer) {
                         </div>
                         <div class="flex items-center flex-wrap">
                         <p class="md:pe-2 pe-0.5" >${productRating(
-                          reviewer[i].rating
-                        )}</p>
+      reviewer[i].rating
+    )}</p>
                         <p
                             class="text-lg text-gray-500 font-semibold relative"
                            
@@ -211,7 +205,7 @@ function displayRelatedProducts(products) {
     RelatedProductsContainer.innerHTML += `
         <div class="card m-2" style="width:250px;">
           <div
-            class="w-full shadow max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700"
+            class="w-full shadow max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700"
           >
             <div class="card-header relative">
               <img
@@ -240,8 +234,8 @@ function displayRelatedProducts(products) {
                 >
                 <span class="text-lg font-bold text-gray-500 mx-2 line-through"
                   >$${(p.price / (1 - p.discountPercentage / 100)).toFixed(
-                    2
-                  )}</span
+      2
+    )}</span
                 >
               </div>
               <div class="flex items-center my-3">
