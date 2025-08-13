@@ -1,4 +1,4 @@
-console.log('Main.js loaded successfully!');
+console.log("Main.js loaded successfully!");
 
 // products containers
 let categoryProducts = document.querySelector("#category-results");
@@ -119,6 +119,7 @@ function filterProducts(category) {
                 class="p-8 rounded-t-lg bg-secondary"
                 src="${product.images[0]}"
                 alt="${product.title}"
+                onclick="goToDetails(${product.id})"
               />
             </a>
             <div class="px-5 pb-5">
@@ -260,6 +261,7 @@ function displayProducts(productList, parentElement) {
                 class="p-8 rounded-t-lg bg-secondary"
                 src="${product.images[0]}"
                 alt="${product.title}"
+                onclick="goToDetails(${product.id})"
               />
             </a>
             <div class="px-5 pb-5">
@@ -347,111 +349,123 @@ function displayProducts(productList, parentElement) {
   });
 }
 
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function updateCartCounter() {
-  const counters = document.querySelectorAll('#cart-counter, #cart-counter-mobile');
+  const counters = document.querySelectorAll(
+    "#cart-counter, #cart-counter-mobile"
+  );
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-  
-  console.log('Updating cart counter. Total items:', totalItems);
-  console.log('Found counters:', counters.length);
-  
-  counters.forEach(counter => {
+
+  console.log("Updating cart counter. Total items:", totalItems);
+  console.log("Found counters:", counters.length);
+
+  counters.forEach((counter) => {
     if (totalItems > 0) {
       counter.textContent = totalItems;
-      counter.classList.remove('hidden');
-      console.log('Counter updated and shown:', counter);
+      counter.classList.remove("hidden");
+      console.log("Counter updated and shown:", counter);
     } else {
-      counter.classList.add('hidden');
-      console.log('Counter hidden');
+      counter.classList.add("hidden");
+      console.log("Counter hidden");
     }
   });
 }
 
 function addToCart(product) {
-  console.log('addToCart called with:', product);
-  const existingItem = cart.find(item => item.id === product.id);
-  
+  console.log("addToCart called with:", product);
+  const existingItem = cart.find((item) => item.id === product.id);
+
   if (existingItem) {
     existingItem.quantity += 1;
-    console.log('Updated existing item quantity:', existingItem);
+    console.log("Updated existing item quantity:", existingItem);
   } else {
     const newItem = {
       id: product.id,
       title: product.title,
       price: product.price,
       image: product.images[0],
-      quantity: 1
+      quantity: 1,
     };
     cart.push(newItem);
-    console.log('Added new item to cart:', newItem);
+    console.log("Added new item to cart:", newItem);
   }
-  
-  localStorage.setItem('cart', JSON.stringify(cart));
-  console.log('Cart updated:', cart);
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  console.log("Cart updated:", cart);
   updateCartCounter();
 }
 
 function removeFromCart(productId) {
-  cart = cart.filter(item => item.id !== productId);
-  localStorage.setItem('cart', JSON.stringify(cart));
+  cart = cart.filter((item) => item.id !== productId);
+  localStorage.setItem("cart", JSON.stringify(cart));
   updateCartCounter();
 }
 
 function updateQuantity(productId, newQuantity) {
-  const item = cart.find(item => item.id === productId);
+  const item = cart.find((item) => item.id === productId);
   if (item && newQuantity > 0) {
     item.quantity = newQuantity;
-    localStorage.setItem('cart', JSON.stringify(cart));
+    localStorage.setItem("cart", JSON.stringify(cart));
     updateCartCounter();
   }
 }
 
 updateCartCounter();
 
-console.log('Adding click event listener...');
+console.log("Adding click event listener...");
 
-document.addEventListener('click', function(e) {
-  if (e.target.classList.contains('add-to-cart-btn') || (e.target.tagName === 'BUTTON' && e.target.textContent.trim() === 'Add to cart')) {
-    console.log('Add to cart button clicked!');
-    let productId = e.target.getAttribute('data-product-id');
+document.addEventListener("click", function (e) {
+  if (
+    e.target.classList.contains("add-to-cart-btn") ||
+    (e.target.tagName === "BUTTON" &&
+      e.target.textContent.trim() === "Add to cart")
+  ) {
+    console.log("Add to cart button clicked!");
+    let productId = e.target.getAttribute("data-product-id");
     let product = null;
-    
+
     if (!productId) {
-      const productCard = e.target.closest('.max-w-sm');
+      const productCard = e.target.closest(".max-w-sm");
       if (productCard) {
-        const img = productCard.querySelector('img');
+        const img = productCard.querySelector("img");
         if (img && img.id) {
           productId = img.id;
         } else if (img && img.src) {
-          const titleElement = productCard.querySelector('h5');
-          const priceElement = productCard.querySelector('.text-3xl');
-          
+          const titleElement = productCard.querySelector("h5");
+          const priceElement = productCard.querySelector(".text-3xl");
+
           if (titleElement && priceElement) {
             const title = titleElement.textContent.trim();
-            const price = parseFloat(priceElement.textContent.replace('$', ''));
-            
+            const price = parseFloat(priceElement.textContent.replace("$", ""));
+
             product = {
               id: Date.now() + Math.random(),
               title: title,
               price: price,
               images: [img.src],
-              rating: 4.5
+              rating: 4.5,
             };
           }
         }
       }
     }
-    
+
     if (productId) {
-      product = products.find(p => p.id === parseInt(productId));
+      product = products.find((p) => p.id === parseInt(productId));
     }
-    
+
     if (product) {
-      console.log('Adding product to cart:', product);
+      console.log("Adding product to cart:", product);
       addToCart(product);
     } else {
-      console.log('No product found to add to cart');
+      console.log("No product found to add to cart");
     }
   }
 });
+
+// go to details page
+function goToDetails(id) {
+  localStorage.setItem("selectedProductId", id);
+  window.location.href = "../pages/productDetails.html";
+}
