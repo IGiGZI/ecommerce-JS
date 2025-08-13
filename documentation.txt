@@ -1,0 +1,8 @@
+project requirements
+- product listing page displays products
+- product details page shows detailed info when a product is selected
+- shopping cart functionality (add, remove and view items)
+- wish list
+- user registration and login functionality
+- full responsive with all screens
+
